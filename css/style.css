@@ -246,7 +246,9 @@ header {
 
 .statistics__benefit:hover {
     background-color: var(--dark-violet);
+    box-shadow: 0 1rem 1.5rem rgba(59, 48, 84, 0.2);
     color: var(--white);
+    transform: translateY(-0.5rem);
 }
 
 .statistics__benefit:nth-child(2) {
