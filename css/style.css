@@ -89,7 +89,11 @@ header {
     display: block;
 }
 
-.header__row nav {
+.header__logo-link {
+    margin-right: 3rem;
+}
+
+.header__row .nav__menu {
     display: flex;
         align-items: center;
         justify-content: space-between;
@@ -118,6 +122,82 @@ header {
 
 .nav__link:hover {
     border-bottom: solid 2px var(--violet-dark);
+}
+
+.nav__hamburguer {
+    cursor: pointer;
+    position: relative;
+}
+
+.nav__hamburguer span {
+    background-color: var(--violet-dark);
+    display: block;
+    width: 40px;
+    height: 4px;
+    position: relative;
+}
+
+.nav__hamburguer span::before,
+.nav__hamburguer span::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-color: var(--violet-dark);
+    width: 100%;
+    height: 4px;
+}
+
+.nav__hamburguer span::before {
+    top: -10px;
+}
+
+.nav__hamburguer span::after {
+    top: 10px;
+}
+
+.hamburguer__menu {
+    background-color: var(--violet-dark);
+    box-shadow: 0 1rem 1.5rem rgba(59, 48, 84, 0.2);
+    border-radius: 5px;
+    position: absolute;
+        top: 3rem;
+        left: -150px;
+    padding: 1rem 3rem;
+    width: initial !important;
+    z-index: 2;
+}
+
+.hamburguer__menu::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    top: -8px;
+    background-color: var(--violet-dark);
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(135deg);
+}
+
+
+.hamburguer__item {
+    text-align: center;
+}
+
+.hamburguer__item:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.hamburguer__link {
+    color: var(--white);
+}
+
+.hamburguer__item:last-child .hamburguer__link {
+    color: var(--violet-dark);
+}
+.hamburguer__item:last-child .hamburguer__link:hover {
+    color: var(--white);
 }
 
 /* / nav */
@@ -293,7 +373,7 @@ header {
     fill: var(--violet-dark);
 }
 
-h3.statistics__benefit-header {
+.statistics__benefit-header {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
 }
@@ -333,7 +413,7 @@ h3.statistics__benefit-header {
 
 footer {
     background-color: var(--blue-dark);
-    padding: 5rem 0 2rem;
+    padding: 5rem 0 3rem;
     color: var(--white);
 }
 
@@ -418,11 +498,141 @@ footer {
 
 }
 
+@media only screen and (min-width: 48em) {
+
+    .nav__hamburguer {
+        display: none;
+    }
+
+}
+
 @media only screen and ( max-width: 72em ) {
 
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    #hero .container {
+        display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+    }
+
+    .hero__info {
+        text-align: center;
+    }
+
+    .hero__img {
+        position: static;
+        transform: initial;
+        margin-bottom: 3rem;
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    .tool__url {
+        width: 70%;
+    }
+
+    .tool__cta {
+        width: 30%;
+    }
+
+    .statistics__benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .statistics__benefits::before {
+        width: 90%;
+        top: 0;
+        left: 50%;
+        transform: rotate(90deg) translateY(-50%);
+        transform-origin: top left;
+    }
+
+    .statistics__benefit {
+        text-align: center;
+        max-width: 500px;
+        margin-right: 0;
+        margin-bottom: 6rem;
+    }
+
+    .statistics__benefit:last-child {
+        margin-bottom: 0;
+    }
+
+    .statistics__benefit:nth-child(2),
+    .statistics__benefit:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .statistics__icon-wrapper {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+@media only screen and (max-width: 60em) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    .hero__header {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .statistics__header,
+    .banner__header {
+        font-size: 1.5rem;
+    }
+
+    .footer__row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__box {
+        margin-bottom: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 48em) {
+
+    .header__logo-link {
+        margin-right: 0;
+    }
+
+    .nav__items {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 41.25em) {
+
+    .tool__form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .tool__url,
+    .tool__cta {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .tool__url {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
     }
 
 }
