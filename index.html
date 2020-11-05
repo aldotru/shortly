@@ -22,7 +22,7 @@
                 <a href="index.html" class="header__logo-link">
                     <img src="assets/img/logo.svg" alt="Shortly logo" class="header__logo">
                 </a>
-                <nav>
+                <nav class="nav__menu">
                     <ul class="nav__items">
                         <li class="nav__item">
                             <a href="#" class="nav__link">Features</a>
@@ -43,6 +43,28 @@
                         </li>
                     </ul> <!-- .nav__items -->
                 </nav>
+                <div class="nav__hamburguer">
+                    <span></span>
+                    <nav class="hamburguer__menu">
+                        <ul class="hamburguer__list">
+                            <li class="hamburguer__item">
+                                <a href="#" class="hamburguer__link">Features</a>
+                            </li>
+                            <li class="hamburguer__item">
+                                <a href="#" class="hamburguer__link">Pricing</a>
+                            </li>
+                            <li class="hamburguer__item">
+                                <a href="#" class="hamburguer__link">Resources</a>
+                            </li>
+                            <li class="hamburguer__item">
+                                <a href="#" class="hamburguer__link">Login</a>
+                            </li>
+                            <li class="hamburguer__item">
+                                <a href="#" class="hamburguer__link btn btn--cyan">Sign Up</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div> <!-- .header__row -->
         </div> <!-- .container -->
     </header>
@@ -63,7 +85,7 @@
             <div class="tool__box">
                 <form action="" class="tool__form">
                     <input class="tool__url" type="url" name="url" id="url" placeholder="Place your link here..." required>
-                    <button class="tool__cta btn btn--cyan btn--round" value="Shorten Link">Shorten Link</button>
+                    <button class="tool__cta btn btn--cyan btn--round" value="Shorten Link">Short Link</button>
                 </form> <!-- .tool__form -->
             </div> <!-- .tool__box -->
         </div> <!-- .container -->
@@ -205,7 +227,7 @@
                 </div> <!-- .footer__box -->
             </div> <!-- .footer__row -->
             <div class="footer__credits">
-                <p>Challenge by <a href="https://www.frontendmentor.io/challenges/fylo-dark-theme-landing-page-5ca5f2d21e82137ec91a50fd" target="_blank">Frontend Mentor</a> - Coded by <span>Aldo 🤟</span></p>
+                <p>Challenge by <a href="https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G" target="_blank">Frontend Mentor</a> - Coded by <span>Aldo 🤟</span></p>
             </div>
         </div> <!-- .container -->
     </footer>
