@@ -356,7 +356,8 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-.statistics__benefit:hover {
+.statistics__benefit:hover,
+.statistics__benefit:focus {
     background-color: var(--violet-dark);
     box-shadow: 0 1rem 1.5rem rgba(59, 48, 84, 0.2);
     color: var(--white);
@@ -386,7 +387,8 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-.statistics__benefit:hover .statistics__icon-wrapper {
+.statistics__benefit:hover .statistics__icon-wrapper,
+.statistics__benefit:focus .statistics__icon-wrapper {
     background-color: var(--cyan);
 }
 
@@ -398,7 +400,8 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-.statistics__benefit:hover svg path {
+.statistics__benefit:hover svg path,
+.statistics__benefit:focus svg path {
     fill: var(--violet-dark);
 }
 
