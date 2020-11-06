@@ -127,31 +127,52 @@ header {
 .nav__hamburguer {
     cursor: pointer;
     position: relative;
+    height: 32px;
+    width: 48px;
 }
 
-.nav__hamburguer span {
-    background-color: var(--violet-dark);
-    display: block;
-    width: 40px;
+.nav__hamburguer button {
+    background-color: var(--cyan);
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
     height: 4px;
     position: relative;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav__hamburguer span::before,
-.nav__hamburguer span::after {
+.nav__hamburguer:hover button,
+.nav__hamburguer button:visited,
+.nav__hamburguer button:focus {
+    background-color: var(--violet-dark);
+    outline: none;
+}
+
+.nav__hamburguer:hover button::before,
+.nav__hamburguer:hover button::after,
+.nav__hamburguer button:focus::before,
+.nav__hamburguer button:focus::after {
+    background-color: var(--violet-dark);
+}
+
+.nav__hamburguer button::before,
+.nav__hamburguer button::after {
     content: '';
     display: inline-block;
     position: absolute;
-    background-color: var(--violet-dark);
+        left: 0;
+    background-color: var(--cyan);
     width: 100%;
     height: 4px;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav__hamburguer span::before {
+.nav__hamburguer button::before {
     top: -10px;
 }
 
-.nav__hamburguer span::after {
+.nav__hamburguer button::after {
     top: 10px;
 }
 
@@ -161,12 +182,18 @@ header {
     border-radius: 5px;
     position: absolute;
         top: 3rem;
-        left: -150px;
-    padding: 1rem 3rem;
-    width: initial !important;
+        right: 0;
+    padding: 1rem 2rem;
+    width: 180px !important;
     z-index: 2;
     opacity: 0;
     visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburguer__menu.show {
+    visibility: visible;
+    opacity: 1;
 }
 
 .hamburguer__menu::before {
@@ -312,14 +339,14 @@ header {
 .statistics__benefits::before {
     content: '';
     background-color: var(--cyan);
-    width: 100%;
+    width: 95%;
     height: 0.5rem;
     position: absolute;
         top: 50%;
         left: 0;
 }
 
-.statistics__benefit {
+.statistics__benefit {  
     background-color: var(--white);
     border-radius: 6px;
     height: 100%;
@@ -548,11 +575,11 @@ footer {
     }
 
     .statistics__benefits::before {
-        width: 90%;
+        height: 95%;
+        width: 0.5rem;
         top: 0;
         left: 50%;
-        transform: rotate(90deg) translateY(-50%);
-        transform-origin: top left;
+        transform: translateX(-50%);
     }
 
     .statistics__benefit {
